@@ -1,0 +1,34 @@
+
+spring:
+  application:
+    name: TwoFactorAuthentication
+  data:
+    mongodb:
+      database: instaclone_auth
+
+server:
+  port: 8081
+
+security:
+  basic:
+    enable: false
+
+  jwt:
+    uri: /auth/**
+    header: Authorization
+    prefix: Bearer
+    expiration: 86400
+    secret: FA4IH435VZXZN74AA64SPARF5TH5P3LC
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: TRACE
